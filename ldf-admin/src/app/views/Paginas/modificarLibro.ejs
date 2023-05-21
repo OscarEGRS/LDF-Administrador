@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Administrador linea de fuego</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <a href="" class="navbar-brand mx-auto">Administrador Linea de Fuego</a>
+    </nav>
+    <div class="col-md-6 mt-4 card">
+        <form class="card-body" action="/modificarLibro" method="post">
+          <h3 class="card-title">Agregar Libro</h3>
+          <div class="form-group">
+            <input name="titulo" type="text" class="form-control" placeholder="Titulo">
+          </div>
+          <div class="form-group">
+            <input name="Autor" type="text" class="form-control" placeholder="Autor">
+          </div>
+          <div class="form-group">
+            <input name="Genero" type="text" class="form-control" placeholder="Genero">
+          </div>
+          <div class="form-group">
+            <input name="Tipo" type="text" class="form-control" placeholder="Tipo">
+          </div>
+          <div class="form-group">
+            <input name="Cantidad" type="text" class="form-control" placeholder="Cantidad">
+          </div>
+          <div class="form-group">
+            <input name="Precio" type="text" class="form-control" placeholder="Precio">
+          </div>
+          <div class="form-group">
+            <input name="FechaPublica" type="text" class="form-control" placeholder="Fecha de Publicación">
+          </div>
+
+          <div class="form-group">
+            <input name="Descripcion" type="text" class="form-control" placeholder="Descripción">
+          </div>
+          <input type="submit" class="btn btn-primary" value="Agregar" >
+        </form>
+      </div>
+    <div class="row">
+      <div class="col-md-6 mt-4 text-center">
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>ID</th>
+            <th>Titulo</th>
+            <th>Autor</th>
+            <th>Genero</th>
+            <th>Tipo</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+          </tr>
+          <% for (var i = 0; i < libro.length; i ++) { %>
+            <tr>
+              <td><%= libro[i].l_id_libro %></td>
+              <td><%= libro[i].l_nombre %></td>
+              
+              <td><%= libro[i].l_autor %></td>
+              <td><%= libro[i].l_genero%></td>
+              <td><%= libro[i].l_tipo%></td>
+              <td><%= libro[i].l_cantidad %></td>
+              <td><%= libro[i].l_precio %></td>
+
+
+
+
+
+
+            </tr>
+          <% } %>   
+        </table>
+      </div>
+    </div>
+
+     
+  </body>
+</html>
